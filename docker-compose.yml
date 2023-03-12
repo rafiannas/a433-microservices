@@ -7,12 +7,10 @@ services:
     image: item-app #menjelaskan bahwa akan dibuatkan image tersebut pada service 1
     ports:
       #menjelaskan container/service 1 akan berjalan di port berapa
-      - 80 #menjelaskan container/service 1 akan berjalan di port 80
-    working_dir: /app #menjelaskan working directory path nya berada pada /app
+      - 80:8080 #menjelaskan container/service 1 akan berjalan di port 80 pada host, dan port 8080 di container
     restart: always #menjelakan bahwa container/service ini selalu restart ketika berhenti
-    volumes:
-      #menjelaskan menggunakan volume app-db yang di simpan pada path ./:/app
-      - ./:/app
+    depends_on:
+      - item-db
 
   item-db:
     #menjelaskan nama service yang mau dibuat (container/service 2)
@@ -21,9 +19,6 @@ services:
       #menjelaskan menggunakan volume app-db yang di simpan pada path /data/db
       - app-db:/data/db
     restart: always #menjelakan bahwa container/service ini selalu restart ketika berhenti
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: dicoding #menjelaskan confogurasi env untuk username db
-      MONGO_INITDB_ROOT_PASSWORD: dicoding123 #menjelaskan confogurasi env untuk password db
 
 volumes:
   #menjelaskan pembuatan volume

@@ -10,9 +10,6 @@ WORKDIR /app
 #copy semua file yang ada di path default ke image yang ada di path default juga
 COPY . .
 
-#menginstal dependency yang diperlukan 
-RUN yarn install --production
-
 #menentukan bahwa aplikasi berjalan di mode production dan menggunakan container item-db pada host nya
 ENV NODE_ENV=production DB_HOST=item-db
 
