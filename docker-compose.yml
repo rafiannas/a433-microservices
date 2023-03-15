@@ -4,7 +4,7 @@ services:
   #menjelaskan service apa saja yang mau dibuat pada docker
   item-app:
     #menjelaskan nama service yang mau dibuat (container/service 1)
-    image: item-app #menjelaskan bahwa akan dibuatkan image tersebut pada service 1
+    image: item-app:v2 #menjelaskan bahwa akan dibuatkan image tersebut pada service 1
     ports:
       #menjelaskan container/service 1 akan berjalan di port berapa
       - 80:8080 #menjelaskan container/service 1 akan berjalan di port 80 pada host, dan port 8080 di container
