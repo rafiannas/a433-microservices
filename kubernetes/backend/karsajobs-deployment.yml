@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-tier
+  labels:
+    app: karsajobs
+    tier: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: app
+  template:
+    metadata:
+      labels:
+        app: karsajobs
+        tier: app
+    spec:
+      containers:
+      - name: be-karsajobs
+        image: rafiannas/karsajobs:latest
+        ports:
+          - containerPort: 8080
+        env:
+          - name: APP_PORT
+            value: 8080
+          - name: MONGO_USER 
+            value: MONGO_ROOT_USERNAME
+          - name: MONGO_PASS 
+            value: MONGO_ROOT_PASSWORD

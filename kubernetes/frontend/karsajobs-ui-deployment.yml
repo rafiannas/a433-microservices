@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-tier
+  labels:
+    app: karsajobs-ui
+    tier: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: app
+  template:
+    metadata:
+      labels:
+        app: karsajobs-ui
+        tier: app
+    spec:
+      containers:
+      - name: karsajobs-ui
+        image: rafiannas/karsajobs-ui:latest
