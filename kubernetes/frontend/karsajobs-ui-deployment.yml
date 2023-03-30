@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-tier
+  name: app-tier-ui
   labels:
     app: karsajobs-ui
     tier: app

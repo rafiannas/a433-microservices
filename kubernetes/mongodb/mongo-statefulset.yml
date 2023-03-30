@@ -33,9 +33,11 @@ spec:
         volumeMounts:
         - name: mongodb-persistent-storage
           mountPath: /data/db
-        secret:
+        - name: mongodb-secret
           mountPath: /etc/mongo-credentials
       volumes:
       - name: mongodb-persistent-storage
         persistentVolumeClaim:
           claimName: mongodb-pv-claim
+      - name: mongodb-secret
+        secretName: mongodb-secret

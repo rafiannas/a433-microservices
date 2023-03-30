@@ -3,7 +3,10 @@ kind: Service
 metadata:
   labels:
     app: karsajobs-ui
-  name: app-tier
+  name: app-tier-ui
 spec:
   selector:
-    tier: app 
+    tier: app
+    app: karsajobs-ui
+  ports:
+    - port: 8080 
