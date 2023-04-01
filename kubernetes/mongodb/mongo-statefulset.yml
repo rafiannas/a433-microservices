@@ -24,7 +24,7 @@ spec:
         name: mongodb
         env:
         - name: MONGO_INITDB_ROOT_USERNAME_FILE
-          value: /etc/mongo-credentials/MONGO_ROOT_USERNAME
+          value: /etc/mongo-credentials/MONGO_RgiOOT_USERNAME
         - name: MONGO_INITDB_ROOT_PASSWORD_FILE
           value: /etc/mongo-credentials/MONGO_ROOT_PASSWORD
         ports:
@@ -40,4 +40,5 @@ spec:
         persistentVolumeClaim:
           claimName: mongodb-pv-claim
       - name: mongodb-secret
-        secretName: mongodb-secret
+        secret:
+          secretName: mongodb-secret

@@ -9,4 +9,4 @@ spec:
     tier: app
     app: karsajobs-ui
   ports:
-    - port: 8080 
+    - port: 8000 
